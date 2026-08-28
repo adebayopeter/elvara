@@ -1,0 +1,32 @@
+services:
+  # FastAPI Backend Service
+  - type: web
+    name: elvara-api
+    runtime: docker
+    dockerfilePath: ./docker/Dockerfile.api
+    dockerContext: .
+    region: oregon
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: MODEL_PATH
+        value: /app/models/sepsis_model.joblib
+      - key: PYTHONUNBUFFERED
+        value: 1
+
+  # Streamlit Frontend Service
+  - type: web
+    name: elvara-streamlit
+    runtime: docker
+    dockerfilePath: ./docker/Dockerfile.streamlit
+    dockerContext: .
+    region: oregon
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: FASTAPI_URL
+        sync: false  # Will be set manually to https://elvara-api.onrender.com after deployment
+      - key: PYTHONUNBUFFERED
+        value: 1

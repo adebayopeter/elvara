@@ -1,0 +1,143 @@
+[
+  {
+    "label": "HIGH RISK - True Sepsis",
+    "patient_id": 747,
+    "true_sepsis": 1,
+    "age": 93,
+    "gender": "Female",
+    "comorbidity_count": 3,
+    "vitals_last": {
+      "heart_rate": 85.9,
+      "temperature": 37.45,
+      "oxygen_saturation": 96.9,
+      "respiratory_rate": 19.4,
+      "blood_pressure": 118.4
+    },
+    "labs_last": {
+      "lactate": 1.0,
+      "white_cell_count": 7.17,
+      "crp": 13.9,
+      "creatinine": 1.18,
+      "platelet_count": 259.0
+    },
+    "vitals_observations": [
+      {
+        "heart_rate": 112.2,
+        "temperature": 38.75,
+        "oxygen_saturation": 90.5,
+        "respiratory_rate": 22.8,
+        "blood_pressure": 100.5
+      },
+      {
+        "heart_rate": 115.8,
+        "temperature": 36.24,
+        "oxygen_saturation": 93.2,
+        "respiratory_rate": 34.8,
+        "blood_pressure": 104.8
+      }
+    ],
+    "labs_observations": [
+      {
+        "lactate": 5.29,
+        "white_cell_count": 14.88,
+        "crp": 108.2,
+        "creatinine": 1.66,
+        "platelet_count": 162.0
+      }
+    ]
+  },
+  {
+    "label": "LOW RISK - No Sepsis",
+    "patient_id": 2276,
+    "true_sepsis": 0,
+    "age": 18,
+    "gender": "Male",
+    "comorbidity_count": 2,
+    "vitals_last": {
+      "heart_rate": 68.8,
+      "temperature": 37.14,
+      "oxygen_saturation": 96.9,
+      "respiratory_rate": 18.5,
+      "blood_pressure": 115.7
+    },
+    "labs_last": {
+      "lactate": 1.47,
+      "white_cell_count": 8.92,
+      "crp": 6.5,
+      "creatinine": 0.73,
+      "platelet_count": 247.0
+    },
+    "vitals_observations": [
+      {
+        "heart_rate": 71.9,
+        "temperature": 37.13,
+        "oxygen_saturation": 97.1,
+        "respiratory_rate": 18.5,
+        "blood_pressure": 108.1
+      },
+      {
+        "heart_rate": 72.1,
+        "temperature": 37.56,
+        "oxygen_saturation": 97.0,
+        "respiratory_rate": 18.5,
+        "blood_pressure": 113.0
+      }
+    ],
+    "labs_observations": [
+      {
+        "lactate": 1.47,
+        "white_cell_count": 8.92,
+        "crp": 6.5,
+        "creatinine": 0.73,
+        "platelet_count": 247.0
+      }
+    ]
+  },
+  {
+    "label": "MODERATE RISK - No Sepsis, Elevated Markers",
+    "patient_id": 187,
+    "true_sepsis": 0,
+    "age": 64,
+    "gender": "Male",
+    "comorbidity_count": 0,
+    "vitals_last": {
+      "heart_rate": 106.1,
+      "temperature": 36.54,
+      "oxygen_saturation": 98.9,
+      "respiratory_rate": 16.7,
+      "blood_pressure": 114.4
+    },
+    "labs_last": {
+      "lactate": 1.0,
+      "white_cell_count": 8.79,
+      "crp": 5.3,
+      "creatinine": 1.15,
+      "platelet_count": 260.0
+    },
+    "vitals_observations": [
+      {
+        "heart_rate": 97.5,
+        "temperature": 36.78,
+        "oxygen_saturation": 100.0,
+        "respiratory_rate": 18.1,
+        "blood_pressure": 106.0
+      },
+      {
+        "heart_rate": 91.3,
+        "temperature": 36.75,
+        "oxygen_saturation": 99.6,
+        "respiratory_rate": 19.8,
+        "blood_pressure": 117.3
+      }
+    ],
+    "labs_observations": [
+      {
+        "lactate": 0.68,
+        "white_cell_count": 8.95,
+        "crp": 10.4,
+        "creatinine": 1.13,
+        "platelet_count": 276.0
+      }
+    ]
+  }
+]

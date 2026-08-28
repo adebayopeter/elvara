@@ -1,0 +1,19 @@
+from prometheus_client import Counter, Histogram, Gauge
+
+
+PREDICTION_REQUESTS_TOTAL = Counter (
+    "elvara_sepsis_prediction__total",
+    "Total count of sepsis risk prediction served",
+    ["risk_category"]
+)
+
+PREDICTION_LATENCY_SECONDS = Histogram(
+    "elvara_sepsis_prediction_latency_seconds",
+    "time taken to execute feature engineering and model inference",
+    buckets=(0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0)
+)
+
+MODEL_LOAD_GAUGE = Gauge(
+    "elvara_sepsis_model_load",
+    "1 if model artifacts is loaded successfully, O otherwise"
+)
