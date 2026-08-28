@@ -6,9 +6,14 @@ import math
 import os
 from datetime import datetime, timedelta
 from typing import Any
+from pathlib import Path
 
 import requests
 import streamlit as st
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 st.set_page_config(

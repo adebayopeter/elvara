@@ -11,6 +11,47 @@ This separation allows independent scaling, deployment, and monitoring.
 
 ---
 
+## Local Development
+
+### Environment Setup
+
+1. **Copy environment template:**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Edit `.env` if needed:**
+   - `MODEL_PATH` - Path to trained model (default: `models/sepsis_model.joblib`)
+   - `FASTAPI_URL` - Backend URL for Streamlit (default: `http://localhost:8000`)
+
+3. **Install dependencies:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+### Run Services Locally (Native Python)
+
+**Terminal 1 - FastAPI Backend:**
+```bash
+source venv/bin/activate
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+**Terminal 2 - Streamlit Frontend:**
+```bash
+source venv/bin/activate
+streamlit run streamlit_app/app.py --server.port 8501
+```
+
+**Access:**
+- Streamlit UI: http://localhost:8501
+- FastAPI backend: http://localhost:8000
+- API docs: http://localhost:8000/docs
+
+---
+
 ## Local Development (Docker Compose)
 
 ### Prerequisites
