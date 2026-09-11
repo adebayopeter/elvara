@@ -50,9 +50,36 @@ git push origin main --tags
 
 ## Deployment Steps
 
+### 0. Navigate to Project Root Directory
+
+**CRITICAL**: All Railway commands must be run from the project root directory.
+
+```bash
+# Navigate to the elvara project root
+cd /path/to/elvara
+
+# Verify you're in the correct directory (should show gradio_app/, docker/, app/, etc.)
+ls -la
+
+# You should see:
+# - gradio_app/
+# - docker/
+# - app/
+# - models/
+# - monitoring/
+# - requirements.txt
+```
+
+**Running `railway up` from the wrong directory will upload the wrong files and cause deployment failures.**
+
+---
+
 ### 1. Initialize Railway Project
 
 ```bash
+# Ensure you're in the project root directory
+pwd  # Should show /path/to/elvara
+
 # Login to Railway
 railway login
 
@@ -76,8 +103,11 @@ railway add
 railway variables set MODEL_PATH=/app/models/sepsis_model.joblib
 railway variables set PYTHONUNBUFFERED=1
 
-# Deploy using Dockerfile
-railway up --dockerfile docker/Dockerfile.api
+# Set Dockerfile path
+railway variables set RAILWAY_DOCKERFILE_PATH=docker/Dockerfile.api
+
+# Deploy from project root
+railway up
 
 # Keep this service PRIVATE (do not generate a public domain)
 ```
@@ -110,8 +140,8 @@ railway add
 
 5. **Deploy**:
    ```bash
-   # Deploy official Prometheus image with config volume
-   railway up --service prometheus
+   # Deploy from project root
+   railway up
    ```
 
 **Keep this service PRIVATE** (no public domain).
@@ -143,7 +173,8 @@ railway add
 
 3. **Deploy**:
    ```bash
-   railway up --service grafana
+   # Deploy from project root
+   railway up
    ```
 
 4. **Connect Grafana to Prometheus**:
@@ -170,8 +201,11 @@ railway add
 railway variables set FASTAPI_URL=http://fastapi.railway.internal:8000
 railway variables set PYTHONUNBUFFERED=1
 
-# Deploy using Dockerfile
-railway up --dockerfile gradio_app/Dockerfile
+# Set Dockerfile path
+railway variables set RAILWAY_DOCKERFILE_PATH=gradio_app/Dockerfile
+
+# Deploy from project root
+railway up
 
 # Generate public domain
 railway domain
