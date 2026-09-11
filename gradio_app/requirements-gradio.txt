@@ -1,0 +1,6 @@
+# Additional dependencies for Gradio UI (comparison prototype only)
+# Install alongside main requirements.txt:
+#   pip install -r requirements.txt
+#   pip install -r gradio_app/requirements-gradio.txt
+
+gradio>=4.0.0
