@@ -1,2 +1,3 @@
 FROM grafana/grafana:latest
 USER root
+COPY docker/grafana-provisioning/datasources/prometheus.yml /etc/grafana/provisioning/datasources/prometheus.yml
